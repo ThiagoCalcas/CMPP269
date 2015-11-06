@@ -1,4 +1,77 @@
-\*
-Assignment 3
+Test Data:
+  Inputs:
+    InputFile name
+    OutputFile name
+    MasterCard,Revolving Credit Card,2562.67,18.8,03
+    Canadian Tire,Revolving Credit Card,2782.32,25.99,03
+    Sears,Revolving Credit Card,1437.55,25.99,03
+    CIBC,Convertible Student Loan,14322.48,6.525,01
+    TD,Car Loan,8496.91,10.2,154.78
+    Monthly income: 737.5
+  Outputs:
+    Loan Institution: MasterCard
+    Loan Type: Revolving Credit Card
+    Loan Amount: $2562.67
+    Interest Rate: 18.8%
+    Payment Rate: 03%
+    Interest Paid Per year: $481.78
+    Payment Per Month: $76.88
+    
+    Loan Institution: Canadian Tire
+    Loan Type: Revolving Credit Card
+    Loan Amount: $2782.32
+    Interest Rate: 25.99%
+    Payment Rate: 03%
+    Interest Paid Per year: $723.12
+    Payment Per Month: $83.47
+    
+    Loan Institution: Sears
+    Loan Type: Revolving Credit Card
+    Loan Amount: $1437.55
+    Interest Rate: 25.99%
+    Payment Rate: 03%
+    Interest Paid Per year: $373.62
+    Payment Per Month: $43.13
+    
+    Loan Institution: CIBC
+    Loan Type: Convertible Student Loan
+    Loan Amount: $14322.48%Z
+    Interest Rate: 6.525%
+    Payment Rate: 01%
+    Interest Paid Per year: $934.54
+    Payment Per Month: $143.22
+    
+    Loan Institution: TD
+    Loan Type: Car Loan
+    Loan Amount: $8496.91
+    Interest Rate: 10.2%
+    Monthly income: 737.5
+    Interest Paid Per year: $866.68
+    Payment Per Month: $154.78
+    
+    Number of Records: 5
+    Highest rate: 25.99% for Canadian Tire
+    Lowest rate: 6.53% for CIBC
+    Highest Payment: $154.78 for TD
+    Lowest Payment: $43.13 for Sears
+    Total monthly payments: $501.48
+    Maximum percent of gross income: 30%
+    Eligible money: $221.25
+    Current percent of gross income: 68.00%
+    Wage Leftover = $236.02
+    
+Functionality:
+  
+Inputs:
+  In String
+  Out String
+  
 
-*\
+Outputs:
+  
+Constants:
+  MAX_PAY_FROM_GROSS 30%
+Formulas:
+  
+
+Algorithm:
