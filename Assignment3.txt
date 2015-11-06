@@ -1,7 +1,5 @@
 Test Data:
   Inputs:
-    InputFile name
-    OutputFile name
     MasterCard,Revolving Credit Card,2562.67,18.8,03
     Canadian Tire,Revolving Credit Card,2782.32,25.99,03
     Sears,Revolving Credit Card,1437.55,25.99,03
@@ -72,8 +70,6 @@ Inputs:
   income real 2 dp
   
 Outputs:
-  Out String
-  In String
   names String
   date String
   loanName String
@@ -114,3 +110,53 @@ Formulas:
   balance = income - totalPayment
 
 Algorithm:
+  p+g Out
+  open outFile and error check
+  p+g In
+  open inFile and error check
+  loop for every line in inFile
+    get loanName from inFile
+    get loanType from inFile
+    get amountIn from inFile
+    get rateIn from inFile
+    get paymentPercentIn from inFile
+    parse amountIn to amount
+    parse rateIn to rate
+    parse paymentoPercentIn to paymentPercent
+    calculate interestPerYear
+    calculate payment
+    if loanName is not TD
+      print and display loanName
+      print and display loanType
+      print and display amount
+      print and display rate
+      print and display paymentPercent
+      print and display interestPerYear
+      print and display payment
+    is loanLane is TD
+      print and display loanName
+      print and display loanType
+      print and display amount
+      print and display rate
+      print and display interestPerYear
+      print and display paymentPercent (in the place of payment)
+    calculate numRecords
+    populate aryListRates
+    populate aryListPayments
+    populate aryListNames
+    if rate is higher than highRate
+      assign rate to highRate
+      assing loanName to highRateLoanName
+    if rate is lower than lowRate
+      assign rate to lowRate
+      assign loanName to lowRateLoanName
+    if payment is higher than highPmt
+      assign payment to highPmt
+      assign loanName to highPmtLoanName
+    if payment is lower than lowPmt
+      assign payment to lowPmt
+      assign loanName to lowPmtLoanName
+  print and display numRecords
+  print and display aryListRates
+  print and display aryListPayments
+    print and display aryListNames
