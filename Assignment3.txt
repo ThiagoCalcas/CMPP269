@@ -61,6 +61,10 @@ Test Data:
     Wage Leftover = $236.02
     
 Functionality:
+  The user inputs the infile name and the outfile name.
+  The program gets the informations from the file and calculates interest payment per year and payment per month for each loan institution
+  The program calculates and display highest and lowest rate and total payments
+  The users inputs monthly income and the program calculates the debt service, the over under and balance
   
 Inputs:
   In String
