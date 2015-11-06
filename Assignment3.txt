@@ -65,13 +65,48 @@ Functionality:
 Inputs:
   In String
   Out String
+  income real 2 dp
   
-
 Outputs:
-  
+  Out String
+  In String
+  names String
+  date String
+  loanName String
+  loanType String
+  amount real 2 dp
+  rate real 3 dp
+  paymentPercent real 2 dp
+  interestPerYear real 2 dp
+  payment real 2 dp
+  numRecords Int
+  aryListRates real 2 dp
+  aryListPayments real 4 dp
+  aryListNames String
+  highRate real 2 dp
+  highRateLoanName String
+  lowRate real 2 dp
+  lowRateLoanName String
+  highPmt real 2 dp
+  highPmtLoanName String
+  lowPmt real 2 dp
+  lowPmtLoanName String
+  totalPayment real 2 dp
+  MAX_PAY_FROM_GROSS real 2 dp
+  debtService real 2 dp
+  overUnder real 2 dp
+  balance real 2 dp
+
 Constants:
   MAX_PAY_FROM_GROSS 30%
+
 Formulas:
-  
+  interestPerYear = amount * rate / 100
+  payment = amount * paymentPercent / 100
+  numRecords++
+  totalPayment = totalPayment + payment
+  debtService = income * MAX_PAY_FROM_GROSS
+  overUnder = income / totalPayment
+  balance = income - totalPayment
 
 Algorithm:
