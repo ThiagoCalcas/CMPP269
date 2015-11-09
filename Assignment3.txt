@@ -93,7 +93,7 @@ Outputs:
   lowPmtLoanName String
   totalPayment real 2 dp
   MAX_PAY_FROM_GROSS real 2 dp
-  debtService real 2 dp
+  debtServicing real 2 dp
   overUnder real 2 dp
   balance real 2 dp
 
@@ -105,7 +105,7 @@ Formulas:
   payment = amount * paymentPercent / 100
   numRecords++
   totalPayment = totalPayment + payment
-  debtService = income * MAX_PAY_FROM_GROSS
+  debtServicing = income * MAX_PAY_FROM_GROSS / 100.0
   overUnder = income / totalPayment
   balance = income - totalPayment
 
@@ -120,11 +120,18 @@ Algorithm:
     get amountIn from inFile
     get rateIn from inFile
     get paymentPercentIn from inFile
-    parse amountIn to amount
-    parse rateIn to rate
-    parse paymentoPercentIn to paymentPercent
+    change amountIn to amount (double)
+    change rateIn to rate ((double)
+    change paymentoPercentIn to paymentPercent (double)
     calculate interestPerYear
     calculate payment
+    is loanLane is TD
+      print and display loanName
+      print and display loanType
+      print and display amount
+      print and display rate
+      print and display interestPerYear
+      print and display paymentPercent (in the place of payment)
     if loanName is not TD
       print and display loanName
       print and display loanType
@@ -133,14 +140,8 @@ Algorithm:
       print and display paymentPercent
       print and display interestPerYear
       print and display payment
-    is loanLane is TD
-      print and display loanName
-      print and display loanType
-      print and display amount
-      print and display rate
-      print and display interestPerYear
-      print and display paymentPercent (in the place of payment)
     calculate numRecords
+    calculate totalPayments
     populate aryListRates
     populate aryListPayments
     populate aryListNames
@@ -159,4 +160,19 @@ Algorithm:
   print and display numRecords
   print and display aryListRates
   print and display aryListPayments
-    print and display aryListNames
+  print and display aryListNames
+  print and display highRate and highRateLoanName
+  print and display lowRate and lowRateLoanName
+  print and display highPmt and highPmtLoanName
+  print and display lowPmt and lowPmtLoanName
+  print and display totalPayments
+  p+g income
+  calculate debtServicing
+  print and display debtServicing and overUnder
+  calculate overUnder
+  print and display overUnder
+  calculate balance
+  print and display balance
+  
+  close outfile
+  close infile
