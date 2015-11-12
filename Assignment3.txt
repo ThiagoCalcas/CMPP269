@@ -99,6 +99,7 @@ Outputs:
 
 Constants:
   MAX_PAY_FROM_GROSS 30%
+  DOLLAR $
 
 Formulas:
   interestPerYear = amount * rate / 100
@@ -114,12 +115,23 @@ Algorithm:
   open outFile and error check
   p+g In
   open inFile and error check
+  print and display names
+  print and display date
   loop for every line in inFile
-    get loanName from inFile
-    get loanType from inFile
-    get amountIn from inFile
-    get rateIn from inFile
-    get paymentPercentIn from inFile
+    loop for every field in line
+      if counter is 2 and blank
+        print and display error message
+        exit program
+      if counter is 3 and blank
+        print and display error message
+        exit program
+      else
+        get loanName from inFile
+        get loanType from inFile
+        transliterate loanType
+        get amountIn from inFile
+        get rateIn from inFile
+        get paymentPercentIn from inFile
     change amountIn to amount (double)
     change rateIn to rate ((double)
     change paymentoPercentIn to paymentPercent (double)
@@ -128,19 +140,18 @@ Algorithm:
     is loanLane is TD
       print and display loanName
       print and display loanType
-      print and display amount
-      print and display rate
-      print and display interestPerYear
-      print and display paymentPercent (in the place of payment)
+      print and display DOLLAR, amount
+      print and display rate, percentSign
+      print and display DOLLAR, interestPerYear
+      print and display DOLLAR, paymentPercent (in the place of payment)
     if loanName is not TD
       print and display loanName
       print and display loanType
-      print and display amount
-      print and display rate
-      print and display paymentPercent
-      print and display interestPerYear
-      print and display payment
-    calculate numRecords
+      print and display DOLLAR, amount
+      print and display rate, percentSign
+      print and display paymentPercent, percentSign
+      print and display DOLLAR, interestPerYear
+      print and display DOLLAR, payment
     calculate totalPayments
     populate aryListRates
     populate aryListPayments
@@ -157,22 +168,24 @@ Algorithm:
     if payment is lower than lowPmt
       assign payment to lowPmt
       assign loanName to lowPmtLoanName
+    calculate numRecords
+    update loop variable
   print and display numRecords
   print and display aryListRates
   print and display aryListPayments
   print and display aryListNames
-  print and display highRate and highRateLoanName
-  print and display lowRate and lowRateLoanName
-  print and display highPmt and highPmtLoanName
-  print and display lowPmt and lowPmtLoanName
-  print and display totalPayments
+  print and display highRate, percentSign, highRateLoanName
+  print and display lowRate, percentSign, lowRateLoanName
+  print and display DOLLAR, highPmt, highPmtLoanName
+  print and display DOLLAR, lowPmt, lowPmtLoanName
+  print and display DOLLAR, totalPayments
   p+g income
   calculate debtServicing
-  print and display debtServicing and overUnder
+  print and display MAX_PAY_FROM_GROSS, debtServicing, DOLLAR, debtServicing
   calculate overUnder
-  print and display overUnder
+  print and display overUnder, percentSign
   calculate balance
-  print and display balance
+  print and display DOLLAR, balance
   
   close outfile
   close infile
